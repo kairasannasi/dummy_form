@@ -12,8 +12,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { InlineWidget } from "react-calendly";
-
-function ZoomForm() {
+function ZoomFormTamil() {
   const [displayform, setDisplay] = useState(true);
   const [newCustomerName, setNewCustomerName] = useState("");
   const [mobNo, setMobNo] = useState("");
@@ -23,7 +22,6 @@ function ZoomForm() {
   const [businessYear, setBusinessYear] = useState("");
   const [dgForYourBusiness, setDgForYourBusiness] = useState("");
   const [dgUse, setDgUse] = useState("");
-
 
   const [error_msg, setErrorMsg] = useState(
     "Please enter the value for the above field"
@@ -65,17 +63,17 @@ function ZoomForm() {
       .catch((error) => console.log(error));
     setErrorMsg("Please enter the value for the above field");
   };
- const handleOldBusiness = (e) => {
-   setBusinessYear(e.target.value);
- };
+  const handleOldBusiness = (e) => {
+    setBusinessYear(e.target.value);
+  };
 
- const handleDgUse = (e) => {
-   setDgUse(e.target.value);
- };
+  const handleDgUse = (e) => {
+    setDgUse(e.target.value);
+  };
 
- const handleDgYourBusiness = (e) => {
-   setDgForYourBusiness(e.target.value);
- };
+  const handleDgYourBusiness = (e) => {
+    setDgForYourBusiness(e.target.value);
+  };
   return (
     <Container>
       {displayform ? (
@@ -84,12 +82,18 @@ function ZoomForm() {
             <p style={{ fontSize: "12px" }}>
               {" "}
               Select your language :
-              <Link to="/" style={{ textDecoration: "none", fontWeight:'600',  }}>
+              <Link
+                to="/"
+                style={{ textDecoration: "none", fontWeight: "600" }}
+              >
                 {" "}
                 Engish
               </Link>{" "}
               /
-              <Link to="/zoom-tamil" style={{ textDecoration: "none", fontWeight:'600'}}>
+              <Link
+                to="/zoom-tamil"
+                style={{ textDecoration: "none", fontWeight: "600" }}
+              >
                 {" "}
                 தமிழ்
               </Link>
@@ -98,8 +102,8 @@ function ZoomForm() {
           <Card>
             <Card.Header>
               <cite title="Source Title">
-                Time invested in improving a business is never wasted; it’s a
-                step toward a more successful future
+                ஒரு தொழிலை மேம்படுத்த முதலீடு செய்யும் நேரம் வீணாகாது; இது
+                மிகவும் வெற்றிகரமான எதிர்காலத்தை நோக்கிய ஒரு படியாகும்
               </cite>
             </Card.Header>
 
@@ -110,18 +114,18 @@ function ZoomForm() {
                     <h6
                       style={{ textAlign: "left", textDecoration: "underline" }}
                     >
-                      Contact Info
+                      தொடர்பு தகவல்
                     </h6>
                     <Row style={{ marginBottom: "20px" }}>
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label className="required-field">
-                            Your Name
+                            உங்கள் பெயர்
                           </Form.Label>
                           <Form.Control
                             type="text"
                             required
-                            placeholder="Enter Your Name"
+                            placeholder="உங்கள் பெயரை உள்ளிடவும்"
                             value={newCustomerName}
                             onChange={(e) => setNewCustomerName(e.target.value)}
                           />
@@ -133,7 +137,7 @@ function ZoomForm() {
 
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Label>Mobile Number</Form.Label>
+                          <Form.Label>மொபைல் எண்</Form.Label>
 
                           <Form.Control
                             type="tel"
@@ -148,10 +152,10 @@ function ZoomForm() {
                       </Col>
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Label>City</Form.Label>
+                          <Form.Label>நகரம்</Form.Label>
                           <Form.Control
                             type="text"
-                            placeholder="City Name"
+                            placeholder="நகரத்தின் பெயர்"
                             value={newCustomerAddress}
                             onChange={(e) =>
                               setNewCustomerAddress(e.target.value)
@@ -166,18 +170,18 @@ function ZoomForm() {
                     <h6
                       style={{ textAlign: "left", textDecoration: "underline" }}
                     >
-                      Business Info
+                      வணிகத் தகவல்
                     </h6>
                     <Row style={{ marginTop: "20px" }}>
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label className="required-field">
-                            Business Name
+                            வணிகத்தின் பெயர்
                           </Form.Label>
                           <Form.Control
                             type="text"
                             required
-                            placeholder="Your Business Name"
+                            placeholder="உங்கள் வணிகத்தின் பெயர்"
                             value={businessName}
                             onChange={(e) => setBusinessName(e.target.value)}
                           />
@@ -189,10 +193,10 @@ function ZoomForm() {
 
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Label>Business Type</Form.Label>
+                          <Form.Label>வணிக வகை</Form.Label>
                           <Form.Control
                             type="text"
-                            placeholder="Your Business Type"
+                            placeholder="உங்கள் வணிகத்தின் வகை"
                             value={businesstype}
                             onChange={(e) => setBusinesstype(e.target.value)}
                           />
@@ -203,38 +207,21 @@ function ZoomForm() {
                       </Col>
                     </Row>
                     <Row>
-                      <Col md={6}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Label>How old is the business</Form.Label>
-                          <Form.Select
-                            defaultValue={0}
-                            value={businessYear}
-                            onChange={handleOldBusiness}
-                          >
-                            <option>--Select Option --</option>
-                            <option value="less 2 years">Less 2 years</option>
-                            <option value="2 - 5 years">2 - 5 Years</option>
-                            <option value="5 - 10 years">5 - 10 Years</option>
-                            <option value="above 10years">Above 10Years</option>
-                          </Form.Select>
-                        </Form.Group>
-                        <Alert variant="danger" id="name_er">
-                          &#9432;{error_msg}
-                        </Alert>
-                      </Col>
-                      <Col md={6}>
+                      {" "}
+                      <Col md={12}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label className="required-field">
-                            Has ever tried digital marketing before
+                            இதற்கு முன் டிஜிட்டல் மார்க்கெட்டிங் முயற்சி
+                            செய்திருக்கிற்களா
                           </Form.Label>
                           <Form.Select
                             defaultValue={0}
                             value={dgUse}
                             onChange={handleDgUse}
                           >
-                            <option>--Select Option --</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
+                            <option>--விருப்பத்தை தேர்ந்தெடு --</option>
+                            <option value="yes">ஆம்</option>
+                            <option value="no">இல்லை</option>
                           </Form.Select>
                         </Form.Group>
                         <Alert variant="danger" id="name_er">
@@ -243,30 +230,63 @@ function ZoomForm() {
                       </Col>
                     </Row>
                     <Row style={{ marginBottom: "20px" }}>
-                      <Col md={12}>
+                      <Col md={6}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label>
+                            தொழில் ஆரம்பித்து எவ்வளவு வருடமாகிறது
+                          </Form.Label>
+                          <Form.Select
+                            defaultValue={0}
+                            value={businessYear}
+                            onChange={handleOldBusiness}
+                          >
+                            <option>--விருப்பத்தை தேர்ந்தெடு --</option>
+                            <option value="less 2 years">
+                              2 வருடங்களுக்கும் குறைவானது
+                            </option>
+                            <option value="2 - 5 years">2 - 5 ஆண்டுகள்</option>
+                            <option value="5 - 10 years">
+                              5 - 10 ஆண்டுகள்
+                            </option>
+                            <option value="above 10years">
+                              10 ஆண்டுகளுக்கு மேல்
+                            </option>
+                          </Form.Select>
+                        </Form.Group>
+                        <Alert variant="danger" id="name_er">
+                          &#9432;{error_msg}
+                        </Alert>
+                      </Col>
+                      <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label className="required-field">
-                            Digital Marketing for your business
+                            உங்கள் வணிகத்திற்கான டிஜிட்டல் மார்க்கெட்டிங்
                           </Form.Label>
                           <Form.Select
                             defaultValue={0}
                             value={dgForYourBusiness}
                             onChange={handleDgYourBusiness}
                           >
-                            <option>--Select Option --</option>
+                            <option>--விருப்பத்தை தேர்ந்தெடு --</option>
                             <option value="business awareness">
-                              Business Awareness
+                              வணிக விழிப்புணர்வு
                             </option>
                             <option value="to get more walking">
-                              To get more walking
+                              மேலும் நடைபயிற்சி பெற
                             </option>
-                            <option value="to get sales">To get sales </option>
+                            <option value="to get sales">விற்பனை பெற</option>
                             <option value="smm">
-                              social Media Maintenance(SMM)
+                              சமூக ஊடக பராமரிப்பு(SMM)
                             </option>
-                            <option value="facebood-ad">Facebook Ad's</option>
-                            <option value="google-ad">Google Ad's</option>
-                            <option value="website-ad">Website Ad's </option>
+                            <option value="facebood-ad">
+                              பேஸ்புக் விளம்பரங்கள்
+                            </option>
+                            <option value="google-ad">
+                              கூகுல் விளம்பரங்கள்
+                            </option>
+                            <option value="website-ad">
+                              இணையதள விளம்பரங்கள்
+                            </option>
                           </Form.Select>
                         </Form.Group>
                         <Alert variant="danger" id="name_er">
@@ -288,7 +308,6 @@ function ZoomForm() {
                     />
                   </Col>
                 </Row>
-
                 <Button className="btn_purp" type="submit">
                   Schedule a Meeting
                 </Button>
@@ -328,4 +347,4 @@ function ZoomForm() {
   );
 }
 
-export default ZoomForm;
+export default ZoomFormTamil;
