@@ -254,8 +254,8 @@ function ZoomForm() {
                             onChange={handleDgYourBusiness}
                           >
                             <option>--Select Option --</option>
-                            <option value="business awareness">
-                              Business Awareness
+                            <option value="brand awareness">
+                              Brand Awareness
                             </option>
                             <option value="to get more walking">
                               To get more walking
