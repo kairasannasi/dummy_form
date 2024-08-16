@@ -205,7 +205,7 @@ function ZoomForm() {
                     <Row>
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                          <Form.Label>How old is the business</Form.Label>
+                          <Form.Label>How old is your business?</Form.Label>
                           <Form.Select
                             defaultValue={0}
                             value={businessYear}
@@ -225,7 +225,7 @@ function ZoomForm() {
                       <Col md={6}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label className="required-field">
-                            Has ever tried digital marketing before
+                            Have you ever tried digital marketing before?
                           </Form.Label>
                           <Form.Select
                             defaultValue={0}
@@ -246,7 +246,7 @@ function ZoomForm() {
                       <Col md={12}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                           <Form.Label className="required-field">
-                            Digital Marketing for your business
+                           Why you choose Digital Marketing for your Business?
                           </Form.Label>
                           <Form.Select
                             defaultValue={0}
